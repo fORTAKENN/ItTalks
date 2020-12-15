@@ -10,8 +10,6 @@ namespace ItTalks.Web.ViewModels.Forum
 
         public string Name { get; set; }
 
-        public string Email { get; set; }
-
         public string PostId { get; set; }
 
 

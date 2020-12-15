@@ -65,12 +65,35 @@ namespace ItTalks.Services.Data
 
         public void DeletePost(string postId)
         {
-            throw new NotImplementedException();
+            var post = this.db.Posts.FirstOrDefault(f => f.PostId == postId);
+
+            if (post == null)
+            {
+                throw new InvalidOperationException("No post found with the given post Id!");
+            }
+
+            this.db.Posts.Remove(post);
+            this.db.SaveChanges();
         }
 
-        public void EditPost(EditPostInputModel input)
+        public void EditPost(EditPostModel input)
         {
-            throw new NotImplementedException();
+            if (input == null)
+            {
+                throw new ArgumentNullException("input", "The given input is null!");
+            }
+
+            var post = this.db.Posts.FirstOrDefault(f => f.PostId == input.PostId);
+
+            if (post == null)
+            {
+                throw new InvalidOperationException("No post found with this id!");
+            }
+
+            post.Name = input.Name;
+            post.Messega = input.Message;
+
+            this.db.SaveChanges();
         }
 
         public ICollection<PostViewModel> GetAll()
@@ -93,12 +116,44 @@ namespace ItTalks.Services.Data
 
         public ICollection<UserPostsViewModel> GetPersonalPosts(string userId)
         {
-            throw new NotImplementedException();
+            var user = this.db.Users.FirstOrDefault(u => u.Id == userId);
+            var personalPosts = new List<UserPostsViewModel>();
+
+            var userPosts = this.db.UserPosts.Where(uf => uf.UserId == userId).ToList();
+            var postIds = userPosts.Select(uf => uf.PostId).ToArray();
+
+            foreach (var post in this.db.Posts.Where(f => postIds.Contains(f.PostId)))
+            {
+                personalPosts.Add(new UserPostsViewModel()
+                {
+                    Email = post.Email,
+                    Message = post.Messega,
+                    Name = post.Name,
+                    UserName = user.UserName,
+                    UpploadData = post.UpploadData,
+                    PostId = post.PostId
+              
+                });
+            }
+
+            return personalPosts;
         }
 
         public EditPostModel GetPost(string postId)
         {
-            throw new NotImplementedException();
+            var postDb = this.db.Posts.FirstOrDefault(f => f.PostId == postId);
+
+            if (postDb == null)
+            {
+                throw new ArgumentNullException("No post found with this id!");
+            }
+
+            return new EditPostModel()
+            {
+                PostId = postDb.PostId,
+                Name = postDb.Name,
+                Message = postDb.Messega,
+            };
         }
     }
 }

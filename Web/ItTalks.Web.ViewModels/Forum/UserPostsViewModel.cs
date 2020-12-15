@@ -13,5 +13,7 @@ namespace ItTalks.Web.ViewModels.Forum
         public string Email { get; set; }
 
         public string UserName { get; set; }
+        public string PostId { get; set; }
+        public DateTime UpploadData { get; set; }
     }
 }

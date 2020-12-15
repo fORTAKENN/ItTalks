@@ -10,7 +10,7 @@ namespace ItTalks.Services.Data
     {
         public  ICollection<PostViewModel> GetAll();
 
-        public void EditPost(EditPostInputModel input);
+        public void EditPost(EditPostModel input);
         public  string AddPost(ForumInputModel input);
         public void DeletePost(string postId);
         public ICollection<UserPostsViewModel> GetPersonalPosts(string userId);
