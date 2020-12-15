@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace ItTalks.Web.Controllers
 {
-    public class GalleryController : BaseController
+    public class ForumController : BaseController
     {
         public IActionResult Home()
         {
             return this.View();
         }
 
-
+        public IActionResult SubmitPost()
+        {
+            return this.View();
+        }
 
 
     }
