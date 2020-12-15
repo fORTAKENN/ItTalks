@@ -8,7 +8,7 @@
 
     using ItTalks.Data.Common.Models;
     using ItTalks.Data.Models;
-
+    using ItTalks.Data.Models.Forum;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +25,9 @@
         }
 
         public DbSet<Setting> Settings { get; set; }
-
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<UserPosts> UserPosts { get; set; }
+        
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
@@ -72,6 +74,7 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+            builder.Entity<UserPosts>().HasKey(x => new { x.UserId, x.PostId });
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

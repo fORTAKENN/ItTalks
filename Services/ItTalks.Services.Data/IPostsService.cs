@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItTalks.Web.ViewModels.Forum;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,24 +8,15 @@ namespace ItTalks.Services.Data
 {
     public interface IPostsService
     {
-        public Task<ICollection<PostViewModel>> GetAll(string userId);
+        public  ICollection<PostViewModel> GetAll();
 
-        public Task EditPost(EditPostInputModel input);
-      
+        public void EditPost(EditPostInputModel input);
+        public  string AddPost(ForumInputModel input);
+        public void DeletePost(string postId);
+        public ICollection<UserPostsViewModel> GetPersonalPosts(string userId);
 
-        public Task<string> AddPost(AddPostmModel input);
-        
+        public EditPostModel GetPost(string postId);
 
-        public Task DeletePost(string postId);
-
-        public ICollection<PersonalPostViewModel> GetPersonalPosts(string userId);
-
-        public Task Like(string postId, string userId);
-
-        public EditPostViewModel GetPost(string postId);
-
-        public Task AddPostToUser(string userId, string forumId);
-
-
+        public void AddPostToUser(string userId, string forumId);
     }
 }

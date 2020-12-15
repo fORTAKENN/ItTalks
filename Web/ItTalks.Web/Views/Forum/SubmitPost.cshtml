@@ -1,24 +1,30 @@
-﻿<div id="comments">
+﻿@using ItTalks.Web.ViewModels.Forum
+@model ForumInputModel
+
+<div id="comments">
       
      <h2>Write post</h2>
-    <form action="#" method="post">
+    <form  asp-controller="Forum" asp-action="SubmitPost" method="post">
         <div class="one_third first">
-            <label for="name">Name <span>*</span></label>
-            <input type="text" name="name" id="name" value="" size="22" required>
+            <label asp-for="Name">Name <span>*</span></label>
+            <input asp-for="Name" name="name" id="name" value="" size="22" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="one_third">
-            <label for="email">Mail <span>*</span></label>
-            <input type="email" name="email" id="email" value="" size="22" required>
+            <label asp-for="Email">Mail <span>*</span></label>
+            <input asp-for="Email" name="email" id="email" value="" size="22" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         
         <div class="block clear">
-            <label for="comment">Your post</label>
-            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+            <label asp-for="Message">Your post</label>
+            <textarea asp-for="Message" id="comment" cols="25" rows="10"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
         </div>
         <div>
-            <input type="submit" name="submit" value="Submit Post">
+            <button type="submit" class="btn btn-info">Submit Post</button>
             &nbsp;
-            <input type="reset" name="reset" value="Reset Post">
+            <button type="reset" class="btn btn-info">Reset Post</button>
         </div>
     </form> 
 </div>

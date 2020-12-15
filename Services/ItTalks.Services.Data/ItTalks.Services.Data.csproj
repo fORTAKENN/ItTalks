@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
@@ -21,6 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\ItTalks.Data.Common\ItTalks.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\ItTalks.Data.Models\ItTalks.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\ItTalks.Data\ItTalks.Data.csproj" />
+    <ProjectReference Include="..\..\Web\ItTalks.Web.ViewModels\ItTalks.Web.ViewModels.csproj" />
     <ProjectReference Include="..\ItTalks.Services.Mapping\ItTalks.Services.Mapping.csproj" />
   </ItemGroup>
 
