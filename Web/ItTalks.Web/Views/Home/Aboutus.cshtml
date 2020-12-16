@@ -1,7 +1,4 @@
-﻿@using ItTalks.Web.ViewModels.Gallery
-@model IEnumerable<ImageViewModel>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 Template Name: Miresa
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
@@ -30,7 +27,7 @@ Licence URI: https://www.os-templates.com/template-terms
                 <ul class="nospace">
                     <li><a href="/"><i class="fa fa-lg fa-home"></i></a></li>
                     <li><a href="/Identity/Account/Login" title="Login"><i class="fa fa-lg fa-sign-in"></i></a></li>
-                    <li><a href="/Identity/Account/Logout" title="Logout"><i class="fa fa-lg fa-sign-out"></i></a></li>
+                    <li><а href="/Identity/Account/Logout" title="Logout"><i class="fa fa-lg fa-sign-out"></i></а></li>
                     <li><a href="/Identity/Account/Register" title="Sign Up"><i class="fa fa-lg fa-edit"></i></a></li>
 
                 </ul>
@@ -49,8 +46,8 @@ Licence URI: https://www.os-templates.com/template-terms
         <div id="breadcrumb" class="hoc clear">
             <!-- ################################################################################################ -->
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/Gallery/Home">Gallery</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
 
             </ul>
             <!-- ################################################################################################ -->
@@ -61,7 +58,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
-    <br/>
+    <br />
     <div class="wrapper row3">
         <main class="hoc container clear">
             <!-- main body -->
@@ -70,21 +67,13 @@ Licence URI: https://www.os-templates.com/template-terms
                 <!-- ################################################################################################ -->
                 <div id="gallery">
                     <figure>
-                        <header class="heading">Gallery</header>                          
-                        <h2><a href="/Gallery/UpploadPhotos" style="font-size : 15px;color : black; margin-left : 5px"> Uppload Photo </a></h2>         <h2><a href="/Gallery/MyPhotos" style="font-size : 15px;color : black; margin-left : 5px"> My Photos </a></h2>
-
-
+                        <header class="heading">Gallery</header>
                         <ul class="nospace clear">
-                            @foreach (ImageViewModel image in Model)
-                            {
-                                <li class="one_quarter first"><a href="#"><img src="~/GalleryImages/@image.ImageUrl" alt=""></a></li>
-                            }
-
                             <li class="one_quarter first"><a href="#"><img src="https://img.112.international/original/2020/08/13/291121.jpg" alt=""></a></li>
-                           <!-- <li class="one_quarter"><a href="#"><img src="https://assets.entrepreneur.com/content/3x2/2000/20180813145838-shutterstock-718548007.jpeg?width=700&crop=2:1*" alt=""></a></li>
+                            <li class="one_quarter"><a href="#"><img src="https://assets.entrepreneur.com/content/3x2/2000/20180813145838-shutterstock-718548007.jpeg?width=700&crop=2:1*" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="https://investsofia.com/wp-content/uploads/2017/04/ICT600grpwthHeaderImage.jpg" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="https://www.india-briefing.com/news/wp-content/uploads/2018/03/India-Brefing-Investing-in-India%E2%80%99s-IT-Sector.jpg" alt=""></a></li>
-                            <li class="one_quarter first"><a href="#"><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201805/information_tech_ITconnectivity_0.jpeg?9_204ydYFmrQub_B8VrleTgMqvXOBABC" alt=""></a></li> -->
+                            <li class="one_quarter first"><a href="#"><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201805/information_tech_ITconnectivity_0.jpeg?9_204ydYFmrQub_B8VrleTgMqvXOBABC" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
@@ -98,7 +87,7 @@ Licence URI: https://www.os-templates.com/template-terms
                 </div>
                 <!-- ################################################################################################ -->
                 <!-- ################################################################################################ -->
-                <!-- <nav class="pagination">
+                <nav class="pagination">
                     <ul>
                         <li><a href="#">&laquo; Previous</a></li>
                         <li><a href="#">1</a></li>
@@ -113,9 +102,9 @@ Licence URI: https://www.os-templates.com/template-terms
                         <li><strong>&hellip;</strong></li>
                         <li><a href="#">14</a></li>
                         <li><a href="#">15</a></li>
-                        <li><a href="#">Next &raquo;</a></li> 
+                        <li><a href="#">Next &raquo;</a></li> -->
                     </ul>
-                </nav> -->
+                </nav>
                 <!-- ################################################################################################ -->
             </div>
             <!-- ################################################################################################ -->
@@ -123,10 +112,10 @@ Licence URI: https://www.os-templates.com/template-terms
             <div class="clear"></div>
         </main>
     </div>
-   
-     <!-- <div class="wrapper row2 bgded overlay" style="background-image:url('../images/demo/backgrounds/04.png');">
+
+    <!-- <div class="wrapper row2 bgded overlay" style="background-image:url('../images/demo/backgrounds/04.png');">
         <section class="hoc cta clear">
-            <!-- ################################################################################################ 
+            <!-- ################################################################################################
             <div class="sectiontitle">
                 <h6 class="heading">Nunc malesuada lorem</h6>
                 <p>Dictum risus tellus cursus ipsum vel facilisis lorem est fermentum</p>
@@ -138,25 +127,25 @@ Licence URI: https://www.os-templates.com/template-terms
                     <button type="submit" value="submit">Submit</button>
                 </fieldset>
             </form>
-           
+
         </section>
     </div> -->
 
     <div class="wrapper row4">
-     
+
     </div>
 
- 
+
     <!-- <div class="wrapper row5">
         <div id="copyright" class="hoc clear">
-       
+
             <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
             <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-      
+
         </div>
     </div> -->
     <!-- ################################################################################################ -->
-  
+
     <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
     <!-- JAVASCRIPTS -->
     <script src="../layout/scripts/jquery.min.js"></script>

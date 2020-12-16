@@ -13,6 +13,8 @@ namespace ItTalks.Services.Data
 
         public void AddImage(PhotoInputModel image, string UserId);
 
+        public ICollection<ImageViewModel> GetPersonalPhotos(string userId);
+
 
     }
 }

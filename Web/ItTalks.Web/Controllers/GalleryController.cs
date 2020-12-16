@@ -51,6 +51,17 @@ namespace ItTalks.Web.Controllers
             return this.Redirect("/Gallery/Home");
         }
 
+        public IActionResult MyPhotos()
+        {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return this.Redirect("/Identity/Account/Login");
+            }
+
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var ViewModel = this.galleryService.GetPersonalPhotos(userId);
+            return this.View(ViewModel);
+        }
 
 
     }

@@ -51,6 +51,19 @@ namespace ItTalks.Services.Data
             }).ToList();
         }
 
+        public ICollection<ImageViewModel> GetPersonalPhotos(string userId)
+        {
+            
+
+            return this.db.Images.Where(i => i.OwnerId == userId).Select(i => new ImageViewModel()
+            {
+                ImageId = i.ImageId,
+                ImageUrl = i.ImageUrl,
+                Name = i.Name
+
+            }).ToList();
+        }
+
         public ImageDetailsViewModel GetImage(string id)
         {
             var image = this.db.Images.FirstOrDefault(i => i.ImageId == id);
