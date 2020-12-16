@@ -9,6 +9,7 @@
     using ItTalks.Data.Common.Models;
     using ItTalks.Data.Models;
     using ItTalks.Data.Models.Forum;
+    using ItTalks.Data.Models.Gallery;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +27,7 @@
 
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Image> Images { get; set; }
         public DbSet<UserPosts> UserPosts { get; set; }
         
         public override int SaveChanges() => this.SaveChanges(true);
