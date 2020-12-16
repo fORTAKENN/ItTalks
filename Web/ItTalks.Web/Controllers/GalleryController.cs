@@ -1,4 +1,5 @@
-﻿using ItTalks.Web.ViewModels.Gallery;
+﻿using ItTalks.Services.Data;
+using ItTalks.Web.ViewModels.Gallery;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,21 @@ namespace ItTalks.Web.Controllers
 {
     public class GalleryController : BaseController
     {
+        private readonly IGalleryService galleryService;
+
+        public GalleryController(IGalleryService galleryService)
+        {
+            this.galleryService = galleryService;
+        }
+
         public IActionResult Home()
         {
             if (!this.User.Identity.IsAuthenticated)
             {
                 return this.Redirect("/Identity/Account/Login");
             }
-            return this.View();
+            var ViewModel = this.galleryService.GetAll();
+            return this.View(ViewModel);
         }
 
         public IActionResult UpploadPhotos()
@@ -36,6 +45,7 @@ namespace ItTalks.Web.Controllers
                 return this.Redirect("/Identity/Account/Login");
             }
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            this.galleryService.AddImage(model, userId);
 
 
             return this.Redirect("/Gallery/Home");

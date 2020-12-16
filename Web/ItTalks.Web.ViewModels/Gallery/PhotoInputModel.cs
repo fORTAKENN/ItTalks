@@ -12,7 +12,7 @@ using System.Text;
         public string Name { get; set; }
 
         [Required]
-        public IFormFile Image { get; set; }
+        public IFormFile Photo { get; set; }
 
 
     }

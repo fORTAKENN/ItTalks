@@ -5,16 +5,17 @@
 <div id="comments">
 
     <h2>Write post</h2>
-    <form asp-controller="Gallery" asp-action="UpploadPhotos" method="post">
+    <form asp-controller="Gallery" asp-action="UpploadPhotos" method="post" enctype="multipart/form-data">
+
         <div class="one_third first">
             <label asp-for="Name">Name <span>*</span></label>
             <input asp-for="Name" name="name" id="name" value="" size="22" required>
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="one_third">
-            <label asp-for="Image" >Image</label>
-            <input asp-for="Image" >
-            <span asp-validation-for="Image" class="text-danger"></span>
+            <label asp-for="Photo" >Image</label>
+            <input asp-for="Photo" name="Photo" id="Photo" required>
+            <span asp-validation-for="Photo" class="text-danger"></span>
         </div>
 
 

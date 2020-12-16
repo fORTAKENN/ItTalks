@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using ItTalks.Web.ViewModels.Gallery
+@model IEnumerable<ImageViewModel>
+
+<!DOCTYPE html>
 <!--
 Template Name: Miresa
 Author: <a href="https://www.os-templates.com/">OS Templates</a>
@@ -72,11 +75,16 @@ Licence URI: https://www.os-templates.com/template-terms
 
 
                         <ul class="nospace clear">
+                            @foreach (ImageViewModel image in Model)
+                            {
+                                <li class="one_quarter first"><a href="#"><img src="~/GalleryImages/@image.ImageUrl" alt=""></a></li>
+                            }
+
                             <li class="one_quarter first"><a href="#"><img src="https://img.112.international/original/2020/08/13/291121.jpg" alt=""></a></li>
-                            <li class="one_quarter"><a href="#"><img src="https://assets.entrepreneur.com/content/3x2/2000/20180813145838-shutterstock-718548007.jpeg?width=700&crop=2:1*" alt=""></a></li>
+                           <!-- <li class="one_quarter"><a href="#"><img src="https://assets.entrepreneur.com/content/3x2/2000/20180813145838-shutterstock-718548007.jpeg?width=700&crop=2:1*" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="https://investsofia.com/wp-content/uploads/2017/04/ICT600grpwthHeaderImage.jpg" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="https://www.india-briefing.com/news/wp-content/uploads/2018/03/India-Brefing-Investing-in-India%E2%80%99s-IT-Sector.jpg" alt=""></a></li>
-                            <li class="one_quarter first"><a href="#"><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201805/information_tech_ITconnectivity_0.jpeg?9_204ydYFmrQub_B8VrleTgMqvXOBABC" alt=""></a></li>
+                            <li class="one_quarter first"><a href="#"><img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201805/information_tech_ITconnectivity_0.jpeg?9_204ydYFmrQub_B8VrleTgMqvXOBABC" alt=""></a></li> -->
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
                             <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
