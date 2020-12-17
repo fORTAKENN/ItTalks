@@ -12,6 +12,10 @@
         {
             return this.View();
         }
+        public IActionResult Aboutus()
+        {
+            return this.View();
+        }
 
         public IActionResult Privacy()
         {
