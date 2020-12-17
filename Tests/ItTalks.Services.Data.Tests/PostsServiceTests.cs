@@ -1,5 +1,4 @@
-﻿
-namespace ItTalks.Services.Data.Tests
+﻿namespace ItTalks.Services.Data.Tests
 {
     using System;
     using System.Collections.Generic;

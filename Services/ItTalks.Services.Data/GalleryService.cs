@@ -25,6 +25,10 @@ namespace ItTalks.Services.Data
 
         public void AddImage(PhotoInputModel image, string UserId)
         {
+            if (image == null)
+            {
+                throw new ArgumentNullException("input", "The given input is null!");
+            }
             string fileName = this.UploadFile(image);
             var user = this.db.Users.FirstOrDefault(u => u.Id == UserId);
             var photo = new Image()
@@ -43,17 +47,18 @@ namespace ItTalks.Services.Data
 
         public ICollection<ImageViewModel> GetAll()
         {
-            return this.db.Images.Select(i => new ImageViewModel() { 
-            ImageId = i.ImageId,
-            ImageUrl = i.ImageUrl,
-            Name = i.Name
+            return this.db.Images.Select(i => new ImageViewModel()
+            {
+                ImageId = i.ImageId,
+                ImageUrl = i.ImageUrl,
+                Name = i.Name
 
             }).ToList();
         }
 
         public ICollection<ImageViewModel> GetPersonalPhotos(string userId)
         {
-            
+
 
             return this.db.Images.Where(i => i.OwnerId == userId).Select(i => new ImageViewModel()
             {
@@ -67,6 +72,10 @@ namespace ItTalks.Services.Data
         public ImageDetailsViewModel GetImage(string id)
         {
             var image = this.db.Images.FirstOrDefault(i => i.ImageId == id);
+            if (image == null)
+            {
+                throw new ArgumentNullException("id", "Image id is invalid");
+            }
             var model = new ImageDetailsViewModel()
             {
                 ImageId = image.ImageId,
