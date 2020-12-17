@@ -1,2 +1,29 @@
-# ItTalks
- final project
+This project is made with porpuse to give you inforamtion about It industry and all above it. It talks is made for SoftUni project deffence and also for training my personal skills. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
