@@ -1,3 +1,7 @@
+It takls is place where you can find ways to fix your computer problems whereas they are software or hardware.
+
+
+
 This project is made with porpuse to give you inforamtion about It industry and all above it. It talks is made for SoftUni project deffence and also for training my personal skills. 
 
 
