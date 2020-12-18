@@ -111,7 +111,7 @@ namespace ItTalks.Services.Data
                 });
             }
 
-            return posts;
+            return posts.OrderBy(p => p.UpploadData).ToList();
         }
 
         public ICollection<UserPostsViewModel> GetPersonalPosts(string userId)

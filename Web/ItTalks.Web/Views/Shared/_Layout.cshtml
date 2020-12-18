@@ -27,13 +27,7 @@
 
             <ul class="nospace">
                 <li class="active"><a href="/">Home</a></li>
-                <li>
-                    <a class="drop" href="#">Pages</a>
-                    <ul>
-                        <li><a href="/Gallery/Home">Gallery</a></li>
-                        <li><a href="/Forum/Home">Forum</a></li>
-                    </ul>
-                </li>
+
                 <!-- <li>
         <a class="drop" href="#">Dropdown</a>
         <ul>
@@ -49,15 +43,24 @@
             <li><a href="#">Level 2</a></li>
         </ul>
     </li> -->
-                <li><a href="/Identity/Account/Manage">Profile</a></li>
-                <li><a href="/Home/Aboutus">About us</a></li>
+
                 @if (this.SignInManager.IsSignedIn(this.User))
                 {
-                        <li >
-                            <form style="display: block" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@(this.Url.Action("Index", "Home", new { area = string.Empty }))">
-                                <button class="btn btn-info" type="submit"><span id="logoutBtn" class="">LOGOUT</span></button>
-                            </form>
-                        </li>
+                    <li>
+                        <a class="drop" href="#">Pages</a>
+                        <ul>
+                            <li><a href="/Gallery/Home">Gallery</a></li>
+                            <li><a href="/Forum/Home">Forum</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Identity/Account/Manage">Profile</a></li>
+                    <li><a href="/Home/Aboutus">About us</a></li>
+
+                    <li>
+                        <form style="display: block" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@(this.Url.Action("Index", "Home", new { area = string.Empty }))">
+                            <button class="btn btn-info" type="submit"><span id="logoutBtn" class="">LOGOUT</span></button>
+                        </form>
+                    </li>
                 }
                 else
                 {
@@ -67,7 +70,7 @@
                     <li>
                         <a asp-area="Identity" asp-page="/Account/Register">Register</a>
                     </li>
-                } 
+                }
             </ul>
             
 
@@ -96,7 +99,7 @@
                 <li>
                     <i class="fa fa-map-marker"></i>
                     <address>
-                        Georgi Sv. Rakovski &amp; 33, Sofia, 1404
+                        Georgi Sv. Rakovski 33, Sofia 1404
                     </address>
                 </li>
                 <li><i class="fa fa-phone"></i> +359 882 333 183</li>
